@@ -2,12 +2,14 @@ package com.bridgelabz;
 
 public class BinarySearchTree {
     Node root;
+
     public static void main(String[] args) {
         System.out.println("Welcome to binary search program");
         BinarySearchTree binarysearchtree = new BinarySearchTree();
-        binarysearchtree.insertion(56);
-        binarysearchtree.insertion(30);
-        binarysearchtree.insertion(70);
+        int[] nodeData = {56, 30, 70, 22, 40, 11, 3, 16, 60, 95, 65, 63, 67};
+        for (int data : nodeData) {
+            binarysearchtree.insertion(data);
+        }
         binarysearchtree.display(binarysearchtree.root);
 
     }
