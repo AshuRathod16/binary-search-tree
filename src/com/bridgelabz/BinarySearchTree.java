@@ -4,13 +4,13 @@ public class BinarySearchTree {
     Node root;
 
     public static void main(String[] args) {
-        System.out.println("Welcome to binary search program");
         BinarySearchTree binarysearchtree = new BinarySearchTree();
         int[] nodeData = {56, 30, 70, 22, 40, 11, 3, 16, 60, 95, 65, 63, 67};
         for (int data : nodeData) {
             binarysearchtree.insertion(data);
         }
         binarysearchtree.display(binarysearchtree.root);
+        binarysearchtree.search(binarysearchtree.root, 63);
 
     }
 
@@ -50,6 +50,17 @@ public class BinarySearchTree {
         if (node.right != null) {
             display(node.right);
         }
+    }
+
+    public void search(Node node, int data) {
+        if (node.data == data)
+            System.out.println(data + " is Present");
+        else if (node.data < data && node.right != null)
+            search(node.right, data);
+        else if (node.data > data && node.left != null)
+            search(node.left, data);
+        else
+            System.out.println(data + " Not Present");
 
     }
 }
